@@ -236,13 +236,6 @@
 
     //耙子，就是为OBJ数组纵向过滤
     __.rake = function(arg,cb){
-        var argType = typeof arg[0];
-        var retData = null;
-        if('array' == argType){
-            retData = [];
-        }else{
-            retData = {};
-        }
 
         for(var key in arg[0]){
             var values = [];
@@ -251,6 +244,21 @@
             }
             cb(key,values);
         }
+
+    };
+    //收割函数，将数组或argument中每一项归总
+    __.reap = function(someArg){
+        if(!!someArg)return null;
+
+        var ret = {};
+        for(var i in someArg){
+            var row = someArg[i];
+            for(var key in row){
+                ret[key] = ret[key]||[];
+                ret[key].push(row[key]);
+            }
+        }
+        return ret;
     };
 
     //构造一个对象
@@ -304,13 +312,14 @@
         return numVal;
     };
 
-    __.arg2Arr = function(arg){
-        var arr = [];
+    __.arg2Arr = __.toArray = function(arg){
+        var ret = [];
         for(var i =0;i<arg.length;i++){
-            arr[i]=arg[i];
+            ret[i]=arg[i];
         }
-        return arr;
+        return ret;
     }
+
     //数组去重
     __.arrayUniq = function(arr){
         var retArr = {};

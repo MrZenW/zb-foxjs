@@ -1,0 +1,24 @@
+{
+  "name": "fox.js",
+  "version": "1.0.1",
+  "description": "a js/node.js function tools libs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zenboss/zb-foxjs.git"
+  },
+  "keywords": [
+    "javascript",
+    "tools",
+    "libs"
+  ],
+  "author": "zenwang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zenboss/zb-foxjs/issues"
+  },
+  "homepage": "https://github.com/zenboss/zb-foxjs"
+}
